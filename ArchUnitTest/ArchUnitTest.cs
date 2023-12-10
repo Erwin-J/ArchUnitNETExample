@@ -41,7 +41,7 @@ namespace ArchUnitTest
             .As("Infrastructure Layer");
 
         [Fact]
-        public void Web_layer_should_not_never_use_the_domain_layer()
+        public void Web_layer_should_never_use_the_domain_layer()
         {
             IArchRule layerRule = Types().That().Are(WebLayer).Should().NotDependOnAny(DomainLayer)
                 .Because("Web should not have any reference to the domain layer.");
